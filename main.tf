@@ -21,9 +21,10 @@ resource "newrelic_nrql_alert_condition" "conditions" {
   open_violation_on_expiration   = each.value.open_violation_on_expiration
   close_violations_on_expiration = each.value.close_violations_on_expiration
   slide_by                       = each.value.slide_by
+  # query                          = each.value.query
 
   nrql {
-    query = "SELECT average(duration) FROM Transaction where appName = 'mmt-blog'"
+    query = each.value.query
   }
 
   critical {

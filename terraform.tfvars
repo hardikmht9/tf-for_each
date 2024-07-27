@@ -19,10 +19,11 @@ expiration_duration            = 120
 open_violation_on_expiration   = true
 close_violations_on_expiration = true
 slide_by                       = 30
+query                          = "SELECT average(largestContentfulPaint) FROM PageViewTiming WHERE appName = 'react-cart' "
 
   }
 
-   condition1 = {
+   condition2 = {
 account_id                     = 4438271
 # policy_id                      = newrelic_alert_policy.policyNN.id
 type                           = "static"
@@ -40,6 +41,7 @@ expiration_duration            = 120
 open_violation_on_expiration   = true
 close_violations_on_expiration = true
 slide_by                       = 30
+query                          = "SELECT percentile(cumulativeLayoutShift ) FROM PageViewTiming WHERE appName = 'react-cart'"
 
   }
    condition2 = {
@@ -60,6 +62,7 @@ expiration_duration            = 120
 open_violation_on_expiration   = true
 close_violations_on_expiration = true
 slide_by                       = 30
+query                         = "SELECT average(duration) FROM Transaction where appName = 'mmt-blog'"
 
   }
    condition3 = {
@@ -80,6 +83,7 @@ expiration_duration            = 120
 open_violation_on_expiration   = true
 close_violations_on_expiration = true
 slide_by                       = 30
+query                          = "SELECT average(domProcessingDuration ) AS 'Dom processing'FROM PageView WHERE appName = 'react-cart'"
 
   }
    condition4 = {
@@ -100,6 +104,7 @@ expiration_duration            = 120
 open_violation_on_expiration   = true
 close_violations_on_expiration = true
 slide_by                       = 30
+query                          = "SELECT percentile(cumulativeLayoutShift ) FROM PageViewTiming WHERE appName = 'react-cart'"
 
   }
 }

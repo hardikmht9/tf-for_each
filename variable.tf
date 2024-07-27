@@ -25,6 +25,7 @@ variable "conditions" {
   open_violation_on_expiration   = string
   close_violations_on_expiration = string
   slide_by                       = number
+  query                          = string
 
 }
 ))
