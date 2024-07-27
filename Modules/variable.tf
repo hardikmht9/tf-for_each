@@ -30,6 +30,7 @@ variable "conditions" {
     threshold                      = number
     threshold_duration             = number
     threshold_occurrences          = string
+
     }
   ))
 }
