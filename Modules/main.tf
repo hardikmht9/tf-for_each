@@ -3,9 +3,10 @@ resource "newrelic_alert_policy" "policyNN" {
 }
 
 resource "newrelic_nrql_alert_condition" "conditions" {
+  policy_id                      = newrelic_alert_policy.policyNN.id
   for_each                       = var.conditions
   account_id                     = each.value.account_id
-  policy_id                      = newrelic_alert_policy.policyNN.id
+  # policy_id                      = newrelic_alert_policy.policyNN.id
   type                           = each.value.type
   name                           = each.value.name
   description                    = each.value.description
@@ -21,7 +22,7 @@ resource "newrelic_nrql_alert_condition" "conditions" {
   open_violation_on_expiration   = each.value.open_violation_on_expiration
   close_violations_on_expiration = each.value.close_violations_on_expiration
   slide_by                       = each.value.slide_by
-  # query                        = each.value.query
+  
 
   nrql {
     query = each.value.query
@@ -35,9 +36,9 @@ resource "newrelic_nrql_alert_condition" "conditions" {
   }
 
   warning {
-    operator             = "above"
-    threshold             = 3.5
-    threshold_duration    = 600
-    threshold_occurrences = "ALL"
+    operator              = each.value.warning_operator
+    threshold           = each.value.warning_threshold
+    threshold_duration    = each.value.warning_threshold_duration
+    threshold_occurrences = each.value.warning_threshold_occurrences
   }
 }

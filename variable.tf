@@ -30,6 +30,10 @@ variable "conditions" {
     threshold                      = number
     threshold_duration             = number
     threshold_occurrences          = string
+   warning_operator                       = string
+    warning_threshold                      = number
+    warning_threshold_duration           = number
+    warning_threshold_occurrences          = string
     }
   ))
 }

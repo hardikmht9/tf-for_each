@@ -7,10 +7,10 @@ variable "name_policy" {
 
 variable "conditions" {
   type = map(object({
-    type       = string
+    # type       = string
     account_id = number
-    #   policy_id                      = number
-    #   type                           = string
+    # policy_id                      = number
+    type                           = string
     name                           = string
     description                    = string
     runbook_url                    = string
@@ -30,6 +30,10 @@ variable "conditions" {
     threshold                      = number
     threshold_duration             = number
     threshold_occurrences          = string
+    warning_operator                       = string
+    warning_threshold                      = number
+    warning_threshold_duration           = number
+    warning_threshold_occurrences          = string
 
     }
   ))

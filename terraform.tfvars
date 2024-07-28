@@ -1,4 +1,4 @@
-name_policy = "temppolicy1"
+name_policy = "temppolicy4"
 
 conditions = {
   condition1 = {
@@ -24,6 +24,10 @@ conditions = {
     threshold                      = 5.5
     threshold_duration             = 300
     threshold_occurrences          = "ALL"
+    warning_operator                       = "Above"
+    warning_threshold                      = 3.5
+    warning_threshold_duration           = 600
+    warning_threshold_occurrences          = "All"
   }
 
   condition2 = {
@@ -49,6 +53,10 @@ conditions = {
     threshold                      = 6
     threshold_duration             = 299
     threshold_occurrences          = "ALL"
+   warning_operator                       = "Above"
+    warning_threshold                      = 3.5
+    warning_threshold_duration           = 600
+    warning_threshold_occurrences          = "All"
 
   }
   condition2 = {
@@ -74,6 +82,10 @@ conditions = {
     threshold                      = 5.5
     threshold_duration             = 300
     threshold_occurrences          = "ALL"
+   warning_operator                       = "Above"
+    warning_threshold                      = 3.5
+    warning_threshold_duration           = 600
+    warning_threshold_occurrences          = "All"
   }
   condition3 = {
     account_id = 4438271
@@ -98,6 +110,10 @@ conditions = {
     threshold                      = 5.5
     threshold_duration             = 300
     threshold_occurrences          = "ALL"
+   warning_operator                       = "Above"
+    warning_threshold                      = 3.5
+    warning_threshold_duration           = 600
+    warning_threshold_occurrences          = "All"
 
 
 
@@ -125,6 +141,10 @@ conditions = {
     threshold                      = 5.5
     threshold_duration             = 300
     threshold_occurrences          = "ALL"
+     warning_operator                       = "Above"
+    warning_threshold                      = 3.5
+    warning_threshold_duration           = 600
+    warning_threshold_occurrences          = "All"
   }
 }
 
