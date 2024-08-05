@@ -24,10 +24,10 @@ conditions = {
     threshold                      = 5.5
     threshold_duration             = 300
     threshold_occurrences          = "ALL"
-    warning_operator                       = "Above"
-    warning_threshold                      = 3.5
-    warning_threshold_duration           = 600
-    warning_threshold_occurrences          = "All"
+    warning_operator               = "Above"
+    warning_threshold              = 3.5
+    warning_threshold_duration     = 600
+    warning_threshold_occurrences  = "All"
   }
 
   condition2 = {
@@ -53,10 +53,10 @@ conditions = {
     threshold                      = 6
     threshold_duration             = 299
     threshold_occurrences          = "ALL"
-   warning_operator                       = "Above"
-    warning_threshold                      = 3.5
-    warning_threshold_duration           = 600
-    warning_threshold_occurrences          = "All"
+    warning_operator               = "Above"
+    warning_threshold              = 3.5
+    warning_threshold_duration     = 600
+    warning_threshold_occurrences  = "All"
 
   }
   condition2 = {
@@ -82,10 +82,10 @@ conditions = {
     threshold                      = 5.5
     threshold_duration             = 300
     threshold_occurrences          = "ALL"
-   warning_operator                       = "Above"
-    warning_threshold                      = 3.5
-    warning_threshold_duration           = 600
-    warning_threshold_occurrences          = "All"
+    warning_operator               = "Above"
+    warning_threshold              = 3.5
+    warning_threshold_duration     = 600
+    warning_threshold_occurrences  = "All"
   }
   condition3 = {
     account_id = 4438271
@@ -106,14 +106,14 @@ conditions = {
     close_violations_on_expiration = true
     slide_by                       = 30
     query                          = "SELECT average(domProcessingDuration ) AS 'Dom processing'FROM PageView WHERE appName = 'react-cart'"
-    operator                       = "above"
-    threshold                      = 5.5
-    threshold_duration             = 300
-    threshold_occurrences          = "ALL"
-   warning_operator                       = "Above"
-    warning_threshold                      = 3.5
-    warning_threshold_duration           = 600
-    warning_threshold_occurrences          = "All"
+    operator                       = null
+    threshold                      = null
+    threshold_duration             = null
+    threshold_occurrences          = null
+    warning_operator               = "Above"
+    warning_threshold              = 3.5
+    warning_threshold_duration     = 600
+    warning_threshold_occurrences  = "All"
 
 
 
@@ -141,11 +141,63 @@ conditions = {
     threshold                      = 5.5
     threshold_duration             = 300
     threshold_occurrences          = "ALL"
-     warning_operator                       = "Above"
-    warning_threshold                      = 3.5
-    warning_threshold_duration           = 600
-    warning_threshold_occurrences          = "All"
+    //warning_operator = null
+    warning_operator               = null
+    warning_threshold              = null
+    warning_threshold_duration     = null
+    warning_threshold_occurrences  = null
   }
+}
+
+destination = {
+  "test"={
+  account_id                    = 4438271
+  notification_destination_name = "browser-alert-destination"
+  notification_destination_type = "EMAIL"
+  key_destination               = "email"
+  notification_email            = "hardikmehta99999@gmail.com"
+}}
+
+channel = {
+  "test"={
+  account_id                    = 4438271
+  notification_channel_name     = "browser-alert-channel"
+  notification_channel_type     = "EMAIL"
+  notification_destination_name = "browser-alert-destination"
+  product                       = "IINT"
+
+
+  key_property                  = "subject"
+  notification_subject          = "BrowserAlert"
+  # notification_custom_details   = "details about the alert"
+
+}
+}
+workflows = { 
+  "test"={
+  name_test                     = "Alert Workflow"
+  muting_rules_handling     = "NOTIFY_ALL_ISSUES"
+  filter_name               = " Filter-name"
+  filter                    = "FILTER"
+  filter_attribute          = "priority"
+  filter_operator           = "EXACTLY_MATCHES"
+  filter_values             = ["growth"]
+  notification_channel_name = "browser-alert-channel"
+
+  # }
+  # # "test-2"={
+  # name_test                     = "Alert Workflow"
+  # muting_rules_handling     = "NOTIFY_ALL_ISSUES"
+  # filter_name               = " Filter-name"
+  # filter                    = "FILTER"
+  # filter_attribute          = "priority"
+  # filter_operator           = "EXACTLY_MATCHES"
+  # filter_values             = ["growth"]
+  # notification_channel_name = "browser-alert-channel"
+
+  # # }
+
+}
 }
 
 

@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"hardik_module","Source":"./Modules","Dir":"Modules"}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"hardik_module","Source":"./Modules","Dir":"Modules"},{"Key":"new_module","Source":"./workflow","Dir":"workflow"}]}
